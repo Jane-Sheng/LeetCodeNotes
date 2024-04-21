@@ -1,78 +1,90 @@
-Array/String
-1768. Merge Strings Alternately
-python字符串str和数组相关函数
-字符串长度：len(str)
-字符串中单个字符调用：str[i]
-数组创建：result = []
-数组添加：result.append(str[i])
-数组转字符串：''.join(result)
-思路
-利用while和if嵌套 i表示word1和word2中的第i个字符
+# Array/String
+## 1768. Merge Strings Alternately
+python字符串`str`和数组相关函数
+- 字符串长度：`len(str)`
+- 字符串中单个字符调用：`str[i]`
+- 数组创建：`result = []`
+- 数组添加：`result.append(str[i])`
+- 数组转字符串：`''.join(result)`
 
-1071. Greatest Common Divisor of Strings
+思路：利用`while`和`if`嵌套，`i`表示`word1`和`word2`中的第`i`个字符
+
+## 1071. Greatest Common Divisor of Strings
 字符串最大公因数算法
-字符串有最大公因数的充要条件是str1+str2==str2+str1
-输出str1的前最大公因数个字符切片就行
+- 字符串有最大公因数的充要条件是`str1 + str2 == str2 + str1`
+- 输出`str1`的前最大公因数个字符切片就行
+
 str相关函数
-可直接相加：str1+str2 用=判断是否完全相同
-前n个字符的切片：str[:n]
-空字符串：""
-最大公因数gcd函数
-调用最大公因数函数from math import gcd
+- 可直接相加：`str1 + str2` 用`=`判断是否完全相同
+- 前n个字符的切片：`str[:n]`
+- 空字符串：`""`
+
+最大公因数`gcd`函数
+- 调用最大公因数函数
+```python
+from math import gcd
 gcd(m,n)
+```
 
-1431. Kids With the Greatest Number of Candies
+## 1431. Kids With the Greatest Number of Candies
 简单题
-注意result = []数组添加需要用.append()
 
-605. Can Place Flowers
-可以改变flowerbed数组
+注意`reult = []`数组添加需要用`.append()`
+
+## 605. Can Place Flowers
+可以改变`flowerbed`数组
+
 直接判断前后和本身是否为0
-注意特例：两端可以种花 当i==0和i==len()-1时要加或的判断
 
-345. Reverse Vowels of a String
-注意str不能直接进行=赋值操作，要先复制一个list格式的：word = list(s)
-最后把它变成str返回：return "".join(word)
+注意特例：两端可以种花 当`i == 0`和`i == len() - 1`时要加“或”的判断
+
+## 345. Reverse Vowels of a String
+注意`str`不能直接进行`=`赋值操作，要先复制一个`list`格式的：`word = list(s)`
+
+最后把它变成`str`返回：`return "".join(word)`
+
 str查找
-先定义要找的字符串：vowels = "aeiouAEIOU"
-再把查找的判断语句写成：vowels.find(word[i])  如果找不到会返回-1，如果找到会返回开始的下标
+- 先定义要找的字符串：`vowels = "aeiouAEIOU"`
+- 再把查找的判断语句写成：`vowels.find(word[i])`  如果找不到会返回`-1`，如果找到会返回开始的下标
 
-151. Reverse Words in a String
+## 151. Reverse Words in a String
 数组的切片是数组，不能直接切片
+
 思路
-不要用双指针手写
-python split 再reverse可以一行搞定
+- 不要用双指针手写
+- python `split`再`reverse`可以一行搞定
+
 str相关函数
-分割：str.split(str="", num=string.count(str)) 按str分割，分成num个 输出是数组https://www.runoob.com/python/att-string-split.html
-反转：reversed(任意迭代器)可以倒过来
+- 分割：`str.split(str="", num=string.count(str))` 按`str`分割，分成`num`个，输出是数组（参考网址：https://www.runoob.com/python/att-string-split.html ）
+- 反转：`reversed`(任意迭代器)可以倒过来
 
-238. Product of Array Except Self
-思路
-创建prefix和suffix存储向前和向后的数的积
+## 238. Product of Array Except Self
+思路：创建`prefix`和`suffix`存储向前和向后的数的积
 
-334. Increasing Triplet Subsequence
-特殊算法
-和first second 比大小 比first小成为first，比first大但比second小成为second，比first和second都大就true。
+## 334. Increasing Triplet Subsequence
+特殊算法：和`first` `second`比大小。比`first`小成为`first`，比`first`大但比`second`小成为`second`，比`first`和`second`都大就`true`。
 
-443. String Compression
-双指针问题，注意理清if while for嵌套思路
+## 443. String Compression
+双指针问题，注意理清`if` `while` `for`嵌套思路
 
-Two Pointers
-283. Move Zeroes
+# Two Pointers
+## 283. Move Zeroes
 双指针简单题
 
-392. Is Subsequence
+## 392. Is Subsequence
 简单题
 
-11. Container With Most Water
+## 11. Container With Most Water
 注意优化思想：更低的一边需要优化
+
 不是特别理解，有时间理解一下为什么这样一定能找到最优解
 
-1679. Max Number of K-Sum Pairs
+## 1679. Max Number of K-Sum Pairs
 先排序后双指针
+
 O(1)的方法是用哈希来做，以后研究一下
 
-Sliding Window
+# Sliding Window
 643. Maximum Average Subarray I
 把平均数转化成和，求最大和只需要重新计算变化的首尾两个数
 
