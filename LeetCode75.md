@@ -29,7 +29,7 @@ gcd(m,n)
 ## 1431. Kids With the Greatest Number of Candies
 简单题
 
-注意`reult = []`数组添加需要用`.append()`
+注意`result = []`数组添加需要用`.append()`
 
 ## 605. Can Place Flowers
 可以改变`flowerbed`数组
@@ -85,120 +85,152 @@ str相关函数
 O(1)的方法是用哈希来做，以后研究一下
 
 # Sliding Window
-643. Maximum Average Subarray I
+## 643. Maximum Average Subarray I
 把平均数转化成和，求最大和只需要重新计算变化的首尾两个数
 
-1456. Maximum Number of Vowels in a Substring of Given Length
+## 1456. Maximum Number of Vowels in a Substring of Given Length
 字符串查找
+```python
 vowel = 'aeiou'
 if str[i] in vowels:
+```
 enumerate()
+```python
 >>> for i, element in enumerate(seq):
 ...     print i, element
 ...
+```
+```
 0 one
 1 two
 2 three
+```
 
-1004. Max Consecutive Ones III
+## 1004. Max Consecutive Ones III
 一种window的特殊解法：
-双指针代表窗口左右坐标，k相当于窗口内0的个数，k为正时可以向右拉长，新数字为1可以向右拉长，k为负时，如果窗口左边第一位是0那么向右移动并k加一，如果是1那么向右移动k不变。
 
-1493. Longest Subarray of 1's After Deleting One Element
+双指针代表窗口左右坐标，`k`相当于窗口内0的个数，`k`为正时可以向右拉长，新数字为1可以向右拉长，`k`为负时，如果窗口左边第一位是0那么向右移动并`k`加一，如果是1那么向右移动`k`不变。
+
+## 1493. Longest Subarray of 1's After Deleting One Element
 继续用上一题的解法
 也可以储存每个连续1的长度，比较得出最大值
 
-
-Prefix Sum
-1732. Find the Highest Altitude
+# Prefix Sum
+## 1732. Find the Highest Altitude
 简单题
 
-724. Find Pivot Index
-range(1,1)为空
-倒序range(n-1, -1, -1)
-善用sum()
-for idx, ele in enumerate(nums):
+## 724. Find Pivot Index
+`range(1,1)`为空
 
-Hash Map / Set
-2215. Find the Difference of Two Arrays
-使用set()可转换数组删掉重复，A-B可以从A中删掉B中出现的元素，再转回数组就行
+倒序`range(n-1, -1, -1)`
+
+善用`sum()`
+
+# Hash Map / Set
+## 2215. Find the Difference of Two Arrays
+使用`set()`可转换数组删掉重复，`A - B`可以从`A`中删掉`B`中出现的元素，再转回数组就行
+
 for特别用法：
+```python
 first = [n for n in set(nums1) if n not in nums2]
+```
 
-1207. Unique Number of Occurrences
+## 1207. Unique Number of Occurrences
 先排序，然后遍历，得到出现次数，出现次数排序。最后检查出现次数有无重复。
-排序：arr.sort()
 
-1657. Determine if Two Strings Are Close
-充要条件：出现的字母频率sort以后应该是相同的
-用[0] * 26来记录每个word中26个字母出现的频率
-ord(ch)表示字符ch的ascii码
+排序：`arr.sort()`
 
-2352. Equal Row and Column Pairs
+## 1657. Determine if Two Strings Are Close
+充要条件：出现的字母频率`sort`以后应该是相同的
+
+用`[0] * 26`来记录每个`word`中26个字母出现的频率
+
+`ord(ch)`表示字符`ch`的ascii码
+
+## 2352. Equal Row and Column Pairs
 哈希
-Counter()调用方法同字典
-二维list转换成转置元组列表 zip(*grid)
-二维list转换成元组列表map(tuple,grid)
+- `Counter()`调用方法同字典
+- 二维`list`转换成转置元组列表`zip(*grid)`
+- 二维`list`转换成元组列表`map(tuple,grid)`
 
-Stack
-2390. Removing Stars From a String
-对字符串(str)s可以用for遍历 for i in s
+# Stack
+## 2390. Removing Stars From a String
+对字符串(str)`s`可以用`for`遍历 `for i in s`
+
 数组形式的栈：
-出栈：stack.pop()
-入栈：stack += i
+- 出栈：`stack.pop()`
+- 入栈：`stack += i`
 
-735. Asteroid Collision
+## 735. Asteroid Collision
 没什么好说的，就是用栈(FILO)
-用while和i来控制变量，可以调整i怎么变，比for灵活
 
-394. Decode String
-Medium感觉比较难
-注意出栈入栈的顺序。用curnum存目前在[前面的数字，用curstr存解码后的字符串。每次遇到"["就将curnum和curstr入栈备用，遇到了"]"就pop两次得到前缀prevstr和目前要对curstr重复的次数prevnum，组合成新的curstr。每次遇到字符直接加在curstr后面。最后curstr就是解码得到的字符串。
-因为[]能保证成对出现，所以每次遇到[就入栈暂存数字和前缀，]出栈两次把目前的字符串组合完成，能保证[]操作匹配。
+用`while`和`i`来控制变量，可以调整`i`怎么变，比`for`灵活
 
-Queue
-933. Number of Recent Calls
-双端队列deque (collection库)
-用数组实现的
-头文件
-import collections
-创建
-queue =collections.deque()
-入列单个
-queue.append('s')
-queue.appendleft('a')
-入列多个（注意加在left是倒过来的顺序）
-queue.extend(['a', 'b'])
-queue.extendleft(['a', 'b'])
-出列
-queue.popleft()
-queue.pop()
+## 394. Decode String
+Medium题，感觉比较难。
 
-Linked List
-2095. Delete the Middle Node of a Linked List
-python单链表包括node.val 和 node.next
-可以直接node.next.next = node.next来删除node后一个节点
+注意出栈入栈的顺序。用`curnum`存目前在`[`前面的数字，用`curstr`存解码后的字符串。每次遇到`[`就将`curnum`和`curstr`入栈备用，遇到了`]`就`pop`两次得到前缀`prevstr`和目前要对`curstr`重复的次数`prevnum`，组合成新的`curstr`。每次遇到字符直接加在`curstr`后面。最后`curstr`就是解码得到的字符串。
 
-Binary Tree-DFS
-104. Maximum Depth of Binary Tree
+因为`[` `]`能保证成对出现，所以每次遇到`[`就入栈暂存数字和前缀，`]`出栈两次把目前的字符串组合完成，能保证`[` `]`操作匹配。
+
+# Queue
+## 933. Number of Recent Calls
+双端队列`deque` (`collections`库)
+- 用数组实现的
+- 头文件
+  ```python
+  import collections
+  ```
+- 创建
+  ```python
+  queue =collections.deque()
+  ```
+- 入列单个
+  ```python
+  queue.append('s')
+  queue.appendleft('a')
+  ```
+- 入列多个（注意加在`left`是倒过来的顺序）
+  ```python  
+  queue.extend(['a', 'b'])
+  queue.extendleft(['a', 'b'])
+  ```
+- 出列
+  ```python
+  queue.popleft()
+  queue.pop()
+  ```
+
+# Linked List
+## 2095. Delete the Middle Node of a Linked List
+python单链表包括`node.val`和`node.next`
+
+可以直接`node.next.next = node.next`来删除`node`后一个节点
+
+# Binary Tree-DFS
+## 104. Maximum Depth of Binary Tree
 递归调用
-定义dfs(node,depth)
 
-Binary-BFS
-199. Binary Tree Right Side View
+定义`dfs(node,depth)`
+
+# Binary-BFS
+## 199. Binary Tree Right Side View
 递归调用
-定义bfs(node, lvl)判断条件：若lvl=res[]就加当前值
 
-Binary Search Tree
-700. Search in a Binary Search Tree
-递归调用的时候需要return
-调用自己这个类函数需要self.function() 如果不是类里的不需要self.
+定义`bfs(node, lvl)` 判断条件：若`lvl=res[]`就加当前值
 
-Graphs-DFS
-841. Keys and Rooms
-用了队列deque()以及popleft() DFS
-一个集合set()表示访问过的房间，一个队列表示要搜索房间的队列
+# Binary Search Tree
+## 700. Search in a Binary Search Tree
+递归调用的时候需要`return`
 
-Graphs-BFS
-1926. Nearest Exit from Entrance in Maze
-node只存同一距离的不重复的合理的未检查过是否是边界的节点，for in range(len(node))当这一距离的node全部检查并且后一距离的合理节点入队列过后，step+1，来记录步数。
+调用自己这个类函数需要`self.function()` 如果不是类里的不需要`self.`
+
+# Graphs-DFS
+## 841. Keys and Rooms
+用了队列`deque()`以及`popleft()` DFS
+
+一个集合`set()`表示访问过的房间，一个队列表示要搜索房间的队列
+
+# Graphs-BFS
+## 1926. Nearest Exit from Entrance in Maze
+`node`只存同一距离的不重复的合理的未检查过是否是边界的节点，`for in range(len(node))`当这一距离的`node`全部检查并且后一距离的合理节点入队列过后，`step`+1，来记录步数。
