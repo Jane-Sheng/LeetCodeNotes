@@ -200,6 +200,8 @@ Medium题，感觉比较难。
   queue.popleft()
   queue.pop()
   ```
+## 649. Dota2 Senate
+中等题，https://leetcode.com/problems/dota2-senate/solutions/5058067/python3-simple-solution-beats-95
 
 # Linked List
 ## 2095. Delete the Middle Node of a Linked List
