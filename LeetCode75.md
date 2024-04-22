@@ -240,6 +240,17 @@ while curr:
 ## 872. Leaf-Similar Trees
 使用递归，在递归函数当中判断是否是叶节点
 
+## 1448. Count Good Nodes in Binary Tree
+DFS:
+- 不能把节点个数放在外面统计，每次让递归函数让它+1，因为没法在递归函数中调用这个全局变量。（试了`global`也不可以）。
+- 看到了一个`solution`在`solve()`函数中先调用子节点的自身，获得当前子树的`good`点的个数，再判断自身是否是`good`点，再向上传递当前`good`点个数。但是它的时间复杂度很高以至于只打败了15%……
+
+BFS:
+用队列`deque()`存储节点地址和当前最大值，使用BFS遍历整个二叉树并且统计当前的`good`点个数。看起来可行并且高效的。
+
+## 437. Path Sum III
+
+
 # Binary-BFS
 ## 199. Binary Tree Right Side View
 递归调用
