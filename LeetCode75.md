@@ -217,11 +217,28 @@ python单链表包括`node.val`和`node.next`
 ## 206. Reverse Linked List
 基础题，注意`cur`，`prev`和`next`存储三个前后节点，给`head`添加前置节点`prev`。关注的是中间的节点。
 
+两行就能写完：
+```python
+while curr:       
+		curr.next, prev, curr = prev, curr, curr.next
+```
+最后倒置过的链表表头是`prev`
+
+## 2130. Maximum Twin Sum of a Linked List
+暴力求解是遍历节点把`val`存成数组，求`max`。空间复杂度O(n)。
+
+更符合题意的做法是快慢指针找中点，把后半部分倒置（方法同上一道题），然后两个指针同时往后移求`max`。
+
+注意一些细节和逻辑。
+
 # Binary Tree-DFS
 ## 104. Maximum Depth of Binary Tree
 递归调用
 
 定义`dfs(node,depth)`
+
+## 872. Leaf-Similar Trees
+使用递归，在递归函数当中判断是否是叶节点
 
 # Binary-BFS
 ## 199. Binary Tree Right Side View
