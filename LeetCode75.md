@@ -211,6 +211,12 @@ python单链表包括`node.val`和`node.next`
 
 可以直接`node.next.next = node.next`来删除`node`后一个节点
 
+## 328. Odd Even Linked List
+简单，理清链表连接顺序防止调用错误就行。注意`node==None`是特例，需要另外判断。
+
+## 206. Reverse Linked List
+
+
 # Binary Tree-DFS
 ## 104. Maximum Depth of Binary Tree
 递归调用
