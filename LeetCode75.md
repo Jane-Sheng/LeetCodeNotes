@@ -215,7 +215,7 @@ python单链表包括`node.val`和`node.next`
 简单，理清链表连接顺序防止调用错误就行。注意`node==None`是特例，需要另外判断。
 
 ## 206. Reverse Linked List
-
+基础题，注意`cur`，`prev`和`next`存储三个前后节点，给`head`添加前置节点`prev`。关注的是中间的节点。
 
 # Binary Tree-DFS
 ## 104. Maximum Depth of Binary Tree
