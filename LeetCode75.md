@@ -55,7 +55,7 @@ str查找
 - python `split`再`reverse`可以一行搞定
 
 str相关函数
-- 分割：`str.split(str="", num=string.count(str))` 按`str`分割，分成`num`个，输出是数组（参考网址：https://www.runoob.com/python/att-string-split.html ）
+- 分割：`str.split(str="", num=string.count(str))` 按`str`分割，分成`num`个，输出是数组（[参考网址](https://www.runoob.com/python/att-string-split.html"https://www.runoob.com/python/att-string-split.html") ）
 - 反转：`reversed`(任意迭代器)可以倒过来
 
 ## 238. Product of Array Except Self
@@ -201,7 +201,9 @@ Medium题，感觉比较难。
   queue.pop()
   ```
 ## 649. Dota2 Senate
-中等题，https://leetcode.com/problems/dota2-senate/solutions/5058067/python3-simple-solution-beats-95
+中等题，感觉代码写得不错所以写了个[solution](https://leetcode.com/problems/dota2-senate/solutions/5058067/python3-simple-solution-beats-95"python3-simple-solution-beats-95")
+
+比较关键的想法是用两个队列存储两个队的下标，每次比较队首下标，大的删除，小的**加n**加到队尾。
 
 # Linked List
 ## 2095. Delete the Middle Node of a Linked List
