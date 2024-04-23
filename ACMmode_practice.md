@@ -1,5 +1,5 @@
 # ACM input and output practice
-Content from [newcoder.com](https://www.nowcoder.com/exam/test/27976983/summary)
+题库来自 [newcoder.com](https://www.nowcoder.com/exam/test/27976983/summary)
 
 ## Example 1
 输入：每行两个数字`a` `b`，有任意多行。
