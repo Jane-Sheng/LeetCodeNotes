@@ -2,6 +2,13 @@
 
 这里仅仅是为了复习用的个人笔记，主要记解题思路，有涉及到摘录的地方侵删。
 
+# 数组
+## 二分查找
+## 704. Binary Search
+注意`left`，`right`指代的查找区间。如果是闭区间`[left, right]`，那么使用`while left <= right` `mid = right - 1` `mid = left + 1`。如果是左闭右开`[left, right)`，那么使用`while left < right` `right = mid` `left = mid + 1`。
+
+细节优化：防止数字溢出，将`mid = (left + right) // 2` 改成 `mid = left + (right - left) // 2`
+
 # 回溯
 ## 77. Combination
 回溯基本套路（参考自代码随想录）
