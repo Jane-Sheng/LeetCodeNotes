@@ -9,6 +9,17 @@
 
 细节优化：防止数字溢出，将`mid = (left + right) // 2` 改成 `mid = left + (right - left) // 2`
 
+## 移除元素
+## 27. Remove Element
+快慢指针法解题，很简单。
+
+## 有序数组的平方
+## 977. Squares of a Sorted Array
+简单题。时间复杂度O(n)，空间复杂度O(n)的解法是双指针，依次比较左右两端数组的绝对值，由大到小从右到左写入新建的空数组中。
+
+## 长度最小的子数组
+## 209. Minimum Size Subarray Sum
+
 # 回溯
 ## 77. Combination
 回溯基本套路（参考自代码随想录）
