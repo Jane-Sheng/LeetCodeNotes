@@ -249,7 +249,21 @@ BFS:
 用队列`deque()`存储节点地址和当前最大值，使用BFS遍历整个二叉树并且统计当前的`good`点个数。看起来可行并且高效的。
 
 ## 437. Path Sum III
+字典调用
+```python
+dict.get(key, value)
+```
+如果该键值不存在，会返回`None`或者指定的`value`，而一般用`dict[key]`调用时，如果`key`不存在会报错。
 
+时间、空间复杂度O(n)，主要思路：对每个节点递归调用DFS，用字典`cache`记录当前节点所在的整条路径上路径长度`currPathSum`与出现的次数。目标`targetSum`视作`currPathSum`与`oldSum`的差，因此只要查找当前的`cache`中`oldSum`出现的频次加到`result`。
+
+几个易错点：
+- 由于每条不同的路径上`cache`都不同，需要及时清除和修改，字典`cache`作为参数传递到`dfs`函数里面。而result是“全局”变量，用`self.result`。
+- `targetSum = oldSum + currPathSum`，计算`oldSum`的时候不要弄错了。
+- 为了避免调用不存在的键值导致报错，修改字典时不应该用`cache[currSum] += 1`，要用`cache[currSum] = cache.get(currSum, 0) + 1`。
+- 每当一个root节点左右子节点都被遍历过了，这条路径之后就不能再被算进任何一条`oldSum`里去，所以要将字典中此路径和`currPathSum`的出现频率-1。
+
+## 1372. Longest ZigZag Path in a Binary Tree
 
 # Binary-BFS
 ## 199. Binary Tree Right Side View
